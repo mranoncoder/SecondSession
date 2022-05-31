@@ -2,7 +2,7 @@ pragma solidity 0.8.7;
 
 contract SecondSession {
 
-string unVerifiedName = 'User not verified.';
+string unVerifiedUser = 'User not verified.';
 uint unverifiedAge = 0;
 
    struct usersInitData{
@@ -14,7 +14,7 @@ uint unverifiedAge = 0;
 
     function dataChangeHandler (string memory _name, uint _age) public{
         if(_age <= 10  ){
-             _userData[msg.sender].name = unVerifiedName ;
+             _userData[msg.sender].name = unVerifiedUser ;
              _userData[msg.sender].age = unverifiedAge ;   
         }else{
             _userData[msg.sender].name = _name ;
