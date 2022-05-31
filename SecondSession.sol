@@ -10,16 +10,12 @@ uint unverifiedAge = 0;
         uint age;        
      }
     
-    mapping(address=>usersInitData)private _userData;
+    mapping(address => usersInitData) private _userData;
 
-    function dataChangeHandler (string memory _name, uint _age) public{
-        if(_age <= 10  ){
-             _userData[msg.sender].name = unverifiedUser ;
-             _userData[msg.sender].age = unverifiedAge ;   
-        }else{
-            _userData[msg.sender].name = _name ;
-             _userData[msg.sender].age = _age ; 
-        }
+    function dataChangeHandler (string memory _name, uint _age) public {
+        require(_age > 10, unverifiedUser);
+            _userData[msg.sender].name = _name;
+            _userData[msg.sender].age = _age; 
     }
 
 
