@@ -3,7 +3,6 @@ pragma solidity 0.8.7;
 contract SecondSession {
 
 string unverifiedUser = 'User not verified.';
-uint unverifiedAge = 0;
 
    struct usersInitData{
         string name;
